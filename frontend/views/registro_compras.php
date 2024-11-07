@@ -21,7 +21,6 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
 <body>
 
 
-
     <!-- Contenido principal -->
     <main class="content">
         <header class="header">
