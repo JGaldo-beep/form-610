@@ -4,24 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Compras</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../css/style_rc.css">
 </head>
 <body>
 
-    <!-- Sidebar Menu -->
+    <!-- Menú lateral -->
     <aside class="sidebar">
         <h3>Menú principal</h3>
         <ul>
-            <li onclick="toggleSubmenu('comprasSubmenu')">REGISTRO COMPRAS, VENTAS</li>
-            <ul id="comprasSubmenu" class="submenu">
-                <li onclick="toggleSubmenu('comprasOptions')">COMPRAS</li>
-                <ul id="comprasOptions" class="submenu">
+            <li>REGISTRO COMPRAS, VENTAS
+                <ul>
                     <li><a href="#">Registro de Compras</a></li>
                     <li><a href="#">Registro Masivo</a></li>
                 </ul>
-                <li><a href="#">VENTAS</a></li>
-            </ul>
+            </li>
+            <li><a href="#">VENTAS</a></li>
             <li><a href="#">CONSOLIDACIÓN</a></li>
             <li><a href="#">CONSULTAS</a></li>
             <li><a href="#">RECTIFICACIÓN RVC</a></li>
@@ -31,9 +28,9 @@
         </ul>
     </aside>
 
-    <!-- Main Content Area -->
+    <!-- Contenido principal -->
     <main class="content">
-        <header>
+        <header class="header">
             <h1>REGISTRO DE COMPRAS</h1>
             <div class="user-info">
                 <span>fridel@gmail.com</span>
@@ -48,13 +45,27 @@
                     <option value="2024">2024</option>
                 </select>
 
+                <label for="codigo-autorizacion">Código de Autorización:</label>
+                <input type="text" id="codigo-autorizacion">
+
+
                 <label for="periodo">Periodo:</label>
                 <select id="periodo">
                     <option value="OCTUBRE">OCTUBRE</option>
                 </select>
 
-                <label for="codigo-autorizacion">Código de Autorización:</label>
-                <input type="text" id="codigo-autorizacion">
+                <label for="nro.factura">Nro. Factura:</label>
+                <input type="text" id="nro.factura">
+
+                <label for="nitProveedor">Nit Proveedor:</label>
+                <input type="text" id="nitProveedor">
+
+
+                
+                <label for="estadoConsolidacion">Estado Uso Consolidacion:</label>
+                <select id="estadoConsolidacion">
+                    <option value="Pendiente">Pendiente</option>
+                </select>
 
                 <button type="button">Buscar</button>
             </form>
@@ -75,14 +86,18 @@
                         <th>Razón Social Proveedor</th>
                         <th>Código de Autorización</th>
                         <th>Número Factura</th>
-                        <th>Fecha de Factura</th>
+                        <th>Número DUI/DIM</th>
+                        <th>Fecha de Factura/DUI/DIM</th>
                         <th>Importe Total Compra</th>
+                        <th>Descuentos, Bonificaciones y Rebajas Sujestas a IVA</th>
+                        <th>Importe Gift Card</th>
+                        <th>Importe Base Credito Fiscal</th>
                         <th>Crédito Fiscal</th>
                         <th>Tipo Compra</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Example rows -->
+                    <!-- Ejemplo de filas -->
                     <tr>
                         <td>1</td>
                         <td><a href="#">👁️</a></td>
@@ -93,12 +108,17 @@
                         <td>31/10/2024</td>
                         <td>64.96</td>
                         <td>5.91</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
                         <td>
                             <select>
                                 <option>Seleccionar</option>
                             </select>
                         </td>
                     </tr>
+                    <!-- Añadir más filas según sea necesario -->
                 </tbody>
             </table>
         </section>
