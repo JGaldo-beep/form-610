@@ -1,3 +1,15 @@
+<?php
+// Incluir el archivo del modelo
+require_once __DIR__ . '/../../backend/models/mensual.php';
+
+// Configuración para mostrar errores (útil para depuración)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Instancia del modelo
+$mensualModel = new Mensual();
+$mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,25 +20,7 @@
 </head>
 <body>
 
-    <!-- Menú lateral -->
-    <aside class="sidebar">
-        <h3>Menú principal</h3>
-        <ul>
-            <li>REGISTRO COMPRAS, VENTAS
-                <ul>
-                    <li><a href="#">Registro de Compras</a></li>
-                    <li><a href="#">Registro Masivo</a></li>
-                </ul>
-            </li>
-            <li><a href="#">VENTAS</a></li>
-            <li><a href="#">CONSOLIDACIÓN</a></li>
-            <li><a href="#">CONSULTAS</a></li>
-            <li><a href="#">RECTIFICACIÓN RVC</a></li>
-            <li><a href="#">RECTIFICACIÓN PERIODOS ANTERIORES LCV</a></li>
-            <li><a href="#">GESTIÓN DUPLICADOS</a></li>
-            <li><a href="#">CORRECCIÓN Y PAGO DE FACTURAS OBSERVADAS</a></li>
-        </ul>
-    </aside>
+
 
     <!-- Contenido principal -->
     <main class="content">
@@ -97,29 +91,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Ejemplo de filas -->
+            <?php if (!empty($mensuales)): ?>
+                <?php foreach ($mensuales as $mensual): ?>
                     <tr>
-                        <td>1</td>
-                        <td><a href="#">👁️</a></td>
-                        <td>182298027</td>
-                        <td>SOINTA SRL</td>
-                        <td>C792CA0359E8CFD00BD...</td>
-                        <td>737571</td>
-                        <td>31/10/2024</td>
-                        <td>64.96</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
+                        <td><?php echo htmlspecialchars($mensual['nit_proveedor']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['razon_social_proveedor']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['codigo_autorizacion']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['numero_factura']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['numero_dui_dim']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['fecha_factura']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['importe_total_compra']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['descuentos']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['importe_gift_card']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
+                        <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
                         <td>
-                            <select>
-                                <option>Seleccionar</option>
-                            </select>
+                            <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
+                            <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
+                            <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
                         </td>
                     </tr>
-                    <!-- Añadir más filas según sea necesario -->
-                </tbody>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="13">No hay registros disponibles.</td>
+                </tr>
+            <?php endif; ?>
+        </tbody>
             </table>
         </section>
     </main>
