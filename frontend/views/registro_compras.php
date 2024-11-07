@@ -69,53 +69,59 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-                <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
+            <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
                 <button onclick="mostrarTab('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>N°</th>
-                        <th>Ver Factura Electrónica</th>
-                        <th>NIT Proveedor</th>
-                        <th>Razón Social Proveedor</th>
-                        <th>Código de Autorización</th>
-                        <th>Número Factura</th>
-                        <th>Número DUI/DIM</th>
-                        <th>Fecha de Factura/DUI/DIM</th>
-                        <th>Importe Total Compra</th>
-                        <th>Descuentos, Bonificaciones y Rebajas Sujestas a IVA</th>
-                        <th>Importe Gift Card</th>
-                        <th>Importe Base Credito Fiscal</th>
-                        <th>Crédito Fiscal</th>
-                        <th>Tipo Compra</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Ejemplo de filas -->
-                    <tr>
-                        <td>1</td>
-                        <td><a href="#">👁️</a></td>
-                        <td>182298027</td>
-                        <td>SOINTA SRL</td>
-                        <td>C792CA0359E8CFD00BD...</td>
-                        <td>737571</td>
-                        <td>31/10/2024</td>
-                        <td>64.96</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>5.91</td>
-                        <td>
-                            <select>
-                                <option>Seleccionar</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <!-- Añadir más filas según sea necesario -->
-                </tbody>
-            </table>
+            
+            <div id="compras-registradas">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Ver Factura Electrónica</th>
+                            <th>NIT Proveedor</th>
+                            <th>Razón Social Proveedor</th>
+                            <th>Código de Autorización</th>
+                            <th>Número Factura</th>
+                            <th>Número DUI/DIM</th>
+                            <th>Fecha de Factura/DUI/DIM</th>
+                            <th>Importe Total Compra</th>
+                            <th>Descuentos, Bonificaciones y Rebajas Sujestas a IVA</th>
+                            <th>Importe Gift Card</th>
+                            <th>Importe Base Credito Fiscal</th>
+                            <th>Crédito Fiscal</th>
+                            <th>Tipo Compra</th>
+                            <th>Codigo de Control</th>
+                            <th>Estado de Consolidacion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+            
+            <div id="confirmacion-compras" style="display: none;">
+                <!-- Contenido de la pestaña de Confirmación de Compras -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Ver Factura Electrónica</th>
+                            <th>NIT Proveedor</th>
+                            <th>Razón Social Proveedor</th>
+                            <th>Código de Autorización</th>
+                            <th>Número Factura</th>
+                            <th>Número DUI/DIM</th>
+                            <th>Fecha de Factura/DUI/DIM</th>
+                            <th>Importe Total Compra</th>
+                            <th>Descuentos, Bonificaciones y Rebajas Sujestas a IVA</th>
+                            <th>Importe Gift Card</th>
+                            <th>Importe Base Credito Fiscal</th>
+                            <th>Crédito Fiscal</th>
+                            <th>Tipo Compra</th>
+                        </tr>
+                    </thead>
+            </div>
         </section>
     </main>
 
