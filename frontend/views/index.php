@@ -3,72 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIAT Impuestos Nacionales</title>
+    <title>Ciudadanía Digital Bolivia</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header">
-
-        <div class="user">fridel@gmail.com</div>
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img src="images/logo_ciudadania.png" alt="Ciudadanía Digital Bolivia">
+            <span>Ciudadanía Digital Bolivia</span>
+        </div>
+        
+        <div class="navbar-menu">
+            <!-- Campo de Búsqueda -->
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar formularios..." id="searchInput">
+            </div>
+            <div class="navbar-user">
+                <span>admin@gmail.com</span>
+                <img src="images/icon_user.png" alt="User Icon">
+            </div>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-    <div class="logo-title">
-        <table width="100%">
-            <tr>
-                <td align="center">
-                    <img src="../images/ciudadania.png" alt="cidadania Logo" class="logo" width="500">
-                </td>
-            </tr>
-        </table>
-    </div>
-
-
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar">
+    <!-- Contenedor de las Tarjetas -->
+    <main class="cards-container">
+        <div class="card">
+            <img src="images/facturacion_icon.png" alt="Facturación Icono">
+            <h3>FACTURACIÓN</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
-        <div class="grid-container">
-
-
-
-            <div class="card">
-                <img src="../images/Factura_N7_Icon.svg" alt="SIAT Logo" class="logo" width="500" height="250">
-                <h3>FACTURACION</h3>
-                <p>Sistema de Facturación...</p>
-            </div>
-
-
-
-            <div class="card">
-                <img src="../images/RC-IVA_Icon.svg" alt="SIAT Logo" class="logo" width="500" height="250">
-                <h3>DOCUMENTOS PERSONALES.</h3>
-                <p>Genreacion de Documentos de Identidad</p>
-            </div>
-
-
-            <div class="card">
-                <img src="../images/Persona_Icon.svg" alt="SIAT Logo" class="logo" width="500" height="250">
-                <h3>PROCESOS PENDIENTES</h3>
-                <p>Procesos personales pendientes</p>
-            </div>
-
-            <div class="card">
-                <img src="../images/Buzon_siat_Icon.svg" alt="SIAT Logo" class="logo" width="500" height="250">
-                <h3>MULTAS</h3>
-                <p>Multas Pendientes</p>
-            </div>
-           
+        <div class="card">
+            <img src="images/documentos_icon.png" alt="Documentos Icono">
+            <h3>DOCUMENTOS</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="card">
+            <img src="images/procesos_icon.png" alt="Procesos Icono">
+            <h3>PROCESOS</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </div>
+        <div class="card">
+            <img src="images/multas_icon.png" alt="Multas Icono">
+            <h3>MULTAS</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Copyright todos los derechos reservados</p>
-        <p>Servicio de Impuestos Nacionales</p>
-    </footer>
+    <script>
+        // Filtrar el contenido del menú desplegable según la búsqueda
+        function filterDropdown() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase();
+            const dropdown = document.querySelector(".dropdown-content");
+            const links = dropdown.getElementsByTagName("a");
 
+            for (let i = 0; i < links.length; i++) {
+                const txtValue = links[i].textContent || links[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    links[i].style.display = "";
+                } else {
+                    links[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
