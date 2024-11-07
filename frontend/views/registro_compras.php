@@ -17,9 +17,14 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Compras</title>
     <link rel="stylesheet" href="../css/style_rc.css">
+    <script>
+        function mostrarTab(tab) {
+            document.getElementById("compras-registradas").style.display = tab === 'compras' ? 'block' : 'none';
+            document.getElementById("confirmacion-compras").style.display = tab === 'confirmacion' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
-
 
     <!-- Contenido principal -->
     <main class="content">
@@ -41,7 +46,6 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                 <label for="codigo-autorizacion">Código de Autorización:</label>
                 <input type="text" id="codigo-autorizacion">
 
-
                 <label for="periodo">Periodo:</label>
                 <select id="periodo">
                     <option value="OCTUBRE">OCTUBRE</option>
@@ -53,8 +57,6 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                 <label for="nitProveedor">Nit Proveedor:</label>
                 <input type="text" id="nitProveedor">
 
-
-                
                 <label for="estadoConsolidacion">Estado Uso Consolidacion:</label>
                 <select id="estadoConsolidacion">
                     <option value="Pendiente">Pendiente</option>
@@ -67,8 +69,8 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-                <button>COMPRAS REGISTRADAS</button>
-                <button>CONFIRMACIÓN DE COMPRAS</button>
+                <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
+                <button onclick="mostrarTab('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
             </div>
             <table>
                 <thead>
@@ -90,37 +92,33 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                     </tr>
                 </thead>
                 <tbody>
-            <?php if (!empty($mensuales)): ?>
-                <?php foreach ($mensuales as $mensual): ?>
+                    <!-- Ejemplo de filas -->
                     <tr>
-                        <td><?php echo htmlspecialchars($mensual['nit_proveedor']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['razon_social_proveedor']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['codigo_autorizacion']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['numero_factura']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['numero_dui_dim']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['fecha_factura']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['importe_total_compra']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['descuentos']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['importe_gift_card']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
+                        <td>1</td>
+                        <td><a href="#">👁️</a></td>
+                        <td>182298027</td>
+                        <td>SOINTA SRL</td>
+                        <td>C792CA0359E8CFD00BD...</td>
+                        <td>737571</td>
+                        <td>31/10/2024</td>
+                        <td>64.96</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
+                        <td>5.91</td>
                         <td>
-                            <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
-                            <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
-                            <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
+                            <select>
+                                <option>Seleccionar</option>
+                            </select>
                         </td>
                     </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="13">No hay registros disponibles.</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
+                    <!-- Añadir más filas según sea necesario -->
+                </tbody>
             </table>
         </section>
     </main>
 
 </body>
 </html>
+

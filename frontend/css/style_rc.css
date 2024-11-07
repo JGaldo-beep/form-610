@@ -7,47 +7,14 @@
 }
 
 body {
-    display: flex;
+    display: block;
     background-color: #f7f7f7;
     color: #2c3e50;
 }
 
-/* Menú lateral */
-.sidebar {
-    width: 250px;
-    background-color: #002F6C;
-    color: #fff;
-    padding: 15px;
-    height: 100vh;
-}
-
-.sidebar h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-.sidebar ul li ul {
-    padding-left: 20px;
-}
-
-.sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
 /* Contenido principal */
 .content {
-    flex: 1;
+    width: 100%;
     padding: 20px;
 }
 
