@@ -17,23 +17,28 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Compras</title>
     <link rel="stylesheet" href="../css/style_rc.css">
+    <script>
+        function mostrarSeccion(seccion) {
+            document.getElementById("compras-registradas").style.display = seccion === 'compras' ? 'block' : 'none';
+            document.getElementById("confirmacion-compras").style.display = seccion === 'confirmacion' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
 
 <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <h3>Menú</h3>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <h3>Menú Principal</h3>
         <ul>
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
             <li><a href="index.php">Inicio</a></li>
-
         </ul>
-    </aside>
+    </div>
 
     <!-- Contenido principal -->
-    <main class="content">
+    <div class="main-content">
         <header class="header">
             <h1>REGISTRO DE COMPRAS</h1>
             <div class="user-info">
@@ -43,18 +48,18 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
 
         <section class="search-section">
             <h2>COMPRAS REGISTRADAS</h2>
-            <form>
+            <form method="POST" action="registro_compras.php">
                 <label for="gestion">Gestión:</label>
-                <select id="gestion">
+                <select id="gestion" name="gestion">
                     <option value="2024">2024</option>
                 </select>
 
-                <label for="codigo-autorizacion">Código de Autorización:</label>
-                <input type="text" id="codigo-autorizacion">
-
-                <label for="periodo">Periodo:</label>
-                <select id="periodo">
-                    <option value="OCTUBRE">OCTUBRE</option>
+                <label for="tipo_compra">Tipo de Compra:</label>
+                <select id="tipo_compra" name="tipo_compra">
+                    <option value="todos" <?php echo $tipo_compra == 'todos' ? 'selected' : ''; ?>>Todos</option>
+                    <option value="consumo" <?php echo $tipo_compra == 'consumo' ? 'selected' : ''; ?>>Consumo</option>
+                    <option value="alimento" <?php echo $tipo_compra == 'alimento' ? 'selected' : ''; ?>>Alimento</option>
+                    <option value="maquinaria" <?php echo $tipo_compra == 'maquinaria' ? 'selected' : ''; ?>>Maquinaria</option>
                 </select>
 
                 <label for="nro.factura">Nro. Factura:</label>
@@ -75,25 +80,31 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-                <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
-                <button onclick="mostrarTab('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
+                <button onclick="mostrarSeccion('compras')">COMPRAS REGISTRADAS</button>
+                <button onclick="mostrarSeccion('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
             </div>
-            <div id="compras-registradas">
+
+            <!-- Tabla de Compras Registradas -->
+            <div id="compras-registradas" style="display: block;">
                 <table>
                     <thead>
                         <tr>
+                            <th>Nro</th>
+                            <th>Ver Factura Electronica</th>
                             <th>NIT Proveedor</th>
-                            <th>Razón Social</th>
+                            <th>Razón Social Proveedor</th>
                             <th>Código de Autorización</th>
                             <th>Número Factura</th>
                             <th>Número DUI/DIM</th>
-                            <th>Fecha Factura</th>
+                            <th>Fecha de Factura DUI/DIM</th>
                             <th>Importe Total Compra</th>
-                            <th>Descuentos</th>
+                            <th>Descuentos, Bonificaciones y Rebajas Sujetas a IVA</th>
                             <th>Importe Gift Card</th>
                             <th>Importe Base Crédito Fiscal</th>
                             <th>Crédito Fiscal</th>
                             <th>Tipo Compra</th>
+                            <th>Codigo de Control</th>
+                            <th>Estado Consolidacion</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -118,22 +129,44 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="13">No hay registros disponibles.</td>
+                                <td colspan="17">No hay registros disponibles en Compras Registradas.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
             </div>
-        </section>
-    </main>
-</div>
 
-<script>
-    function mostrarTab(tab) {
-        document.getElementById("compras-registradas").style.display = tab === 'compras' ? 'block' : 'none';
-        document.getElementById("confirmacion-compras").style.display = tab === 'confirmacion' ? 'block' : 'none';
-    }
-</script>
+            <!-- Tabla de Confirmación de Compras -->
+            <div id="confirmacion-compras" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nro</th>
+                            <th>Ver Factura Electronica</th>
+                            <th>NIT Proveedor</th>
+                            <th>Razón Social Proveedor</th>
+                            <th>Código de Autorización</th>
+                            <th>Número Factura</th>
+                            <th>Numero DUI/DIM</th>
+                            <th>Fecha de Factura DUI/DIM</th>
+                            <th>Importe Total Compra</th>
+                            <th>Descuentos, Bonificaciones y Rebajas Sujetas a IVA</th>
+                            <th>Importe Gift Card</th>
+                            <th>Importe Base Credito Fiscal</th>
+                            <th>Credito Fiscal</th>
+                            <th>Tipo Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8">No hay registros disponibles en Confirmación de Compras.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
 
 </body>
 </html>
