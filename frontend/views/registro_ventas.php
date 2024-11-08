@@ -24,7 +24,7 @@
         <header class="header">
             <h1>REGISTRO DE VENTAS</h1>
             <div class="user-info">
-                <span>fridel@gmail.com</span>
+                <span>alanbrito@gmail.com</span>
             </div>
         </header>
 

@@ -9,6 +9,7 @@
 <body>
 
     <div class="container">
+        
         <div class="header">
             <h2>Datos de la Declaración Jurada</h2>
         </div>
@@ -97,7 +98,9 @@
         
         <div class="action-buttons">
             <button onclick="window.history.back()" class="back-button">Volver</button>
-            <button onclick="declare()" class="declare-button">Declarar</button>
+            <a href="recaudaciones.php">
+                <button onclick="declare()" class="declare-button">Declarar</button>
+            </a>
         </div>
         
     </div>

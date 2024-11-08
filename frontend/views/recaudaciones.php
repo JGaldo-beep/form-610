@@ -13,12 +13,12 @@
         <div class="header-content">
             <h1>RECAUDACIONES</h1>
             <div class="user-info">
-                <span>fridel@gmail.com</span>
+                <span>alanbrito@gmail.com</span>
                 <img src="../images/userlogo.png" alt="Usuario">
             </div>
             <li style="text-align: left; list-style: none;">
-            <a href="index.php" style="color: white; text-decoration: none; font-size: 30px;">Inicio</a>
-        </li>
+                <a href="index.php" style="color: white; text-decoration: none; font-size: 30px;">Inicio</a>
+            </li>
         </div>
     </header>
 
@@ -90,6 +90,15 @@
                 statusCell.textContent = 'HECHO';
                 statusCell.classList.remove('pending');
                 statusCell.classList.add('done');
+                statusCell.style.color = 'green';  // Cambia el color a verde
+                statusCell.style.textAlign = 'center';  // Centra el texto
+                statusCell.style.fontWeight = 'bold';  // Opcional: negrita para resaltar más
+
+                button.textContent = 'Rectificar';
+                button.classList.remove('declarar');
+                button.classList.add('rectificar');
+                button.style.backgroundColor = 'orange';
+                button.style.color = 'white';
             }, 3000); // 3000 ms = 3 segundos
         }
     </script>

@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    height: 80px; /* Ajusta la altura según necesites */
+    padding: 0 50px;
     background-color: #f5f9fc;
     border-bottom: 1px solid #ddd;
 }
@@ -15,7 +16,7 @@
 }
 
 .navbar-logo img {
-    height: 40px; /* Tamaño ajustado del logo */
+    height: 100px; /* Tamaño ajustado del logo */
 }
 
 
