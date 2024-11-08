@@ -44,7 +44,7 @@
     <div class="cards-container">
         
         <!-- Botón para Formularios -->
-        <div class="card-small">
+        <div class="card-large">
             <a href="recaudaciones.php">
                 <img src="../images/imageprocesos.png" alt="Formularios Icono">
             </a>
@@ -53,7 +53,7 @@
         </div>
         
         <!-- Botón para Facturas -->
-        <div class="card-small">
+        <div class="card-large">
             <a href="registro_compras.php">
                 <img src="../images/imagemultas.png" alt="Facturas Icono">
             </a>
@@ -62,7 +62,7 @@
         </div>
         
         <!-- Botón para Buzón -->
-        <div class="card-small">
+        <div class="card-large">
             <a href=".php">
                 <img src="../images/buzon.png" alt="Buzón Icono">
             </a>
