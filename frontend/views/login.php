@@ -39,7 +39,7 @@
                     
                     <button type="submit" class="login-button">INGRESAR</button>
 
-                    <a href="https://proveedor.ciudadania.demo.agetic.gob.bo/auth?response_type=code&client_id=zU0ZCJm6ZNsSQlBbHM25B&state=509ccc2713049e6efea071a9c34f6f45&nonce=231301a1afe20d88ca963ee84c3929c3&redirect_uri=http://localhost/form-610/frontend/views/registro_compras.php&scope=openid%20profile%20offline_access" class="login-button secondary" target="_blank">
+                    <a href="https://proveedor.ciudadania.demo.agetic.gob.bo/auth?response_type=code&client_id=PJ9-KnDqewQ5ZBWM0iCjI&state=509ccc2713049e6efea071a9c34f6f45&nonce=231301a1afe20d88ca963ee84c3929c3&redirect_uri=http://localhost/form-610/frontend/views/index.php&scope=openid%20profile%20offline_access " class="login-button secondary" target="_blank">
                         CIUDADANIA DIGITAL
                     </a>
 

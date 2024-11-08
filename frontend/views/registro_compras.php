@@ -1,3 +1,15 @@
+<?php
+// Incluir el archivo del modelo
+require_once __DIR__ . '/../../backend/models/compras.php';
+
+// Configuración para mostrar errores (útil para depuración)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Instancia del modelo
+$mensualModel = new Mensual();
+$mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
