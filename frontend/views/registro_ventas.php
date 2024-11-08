@@ -15,6 +15,7 @@
         <ul>
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
+            <li><a href="index.php">Inicio</a></li>
         </ul>
     </aside>
 
