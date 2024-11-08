@@ -14,7 +14,7 @@
             <h1>RECAUDACIONES</h1>
             <div class="user-info">
                 <span>fridel@gmail.com</span>
-                <img src="path/to/userlogo.png" alt="Usuario">
+                <img src="../images/userlogo.png" alt="Usuario">
             </div>
         </div>
     </header>
