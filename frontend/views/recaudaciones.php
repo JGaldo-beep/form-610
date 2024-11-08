@@ -16,6 +16,9 @@
                 <span>fridel@gmail.com</span>
                 <img src="../images/userlogo.png" alt="Usuario">
             </div>
+            <li style="text-align: left; list-style: none;">
+            <a href="index.php" style="color: white; text-decoration: none; font-size: 30px;">Inicio</a>
+        </li>
         </div>
     </header>
 
@@ -70,14 +73,26 @@
                         <td>10/2024</td>
                         <td>14/11/2024</td>
                         <td class="status pending">PENDIENTE</td>
-                        <td><button class="btn declarar">Declarar</button></td>
-
+                        <td><button class="btn declarar" onclick="updateStatus(this)">Declarar</button></td>
+                        
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
 
+    <script>
+        function updateStatus(button) {
+            const statusCell = button.closest('tr').querySelector('.status');
+            statusCell.textContent = 'Procesando...';
+
+            setTimeout(() => {
+                statusCell.textContent = 'HECHO';
+                statusCell.classList.remove('pending');
+                statusCell.classList.add('done');
+            }, 3000); // 3000 ms = 3 segundos
+        }
+    </script>
+
 </body>
 </html>
-

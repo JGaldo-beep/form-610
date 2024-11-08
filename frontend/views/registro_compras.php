@@ -21,6 +21,8 @@
         <ul>
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
+            <li><a href="index.php">Inicio</a></li>
+
         </ul>
     </div>
 
@@ -96,38 +98,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="13">No hay registros disponibles.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Tabla de Confirmación de Compras -->
-            <div id="confirmacion-compras" style="display: none;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nro</th>
-                            <th>Ver Factura Electronica</th>
-                            <th>NIT Proveedor</th>
-                            <th>Razón Social Proveedor</th>
-                            <th>Código de Autorización</th>
-                            <th>Número Factura</th>
-                            <th>Número DUI/DIM</th>
-                            <th>Fecha de Factura DUI/DIM</th>
-                            <th>Importe Total Compra</th>
-                            <th>Descuentos, bonificaciones y Rebajas Sujetas a IVA</th>
-                            <th>Importe Gift Card</th>
-                            <th>Importe Base Crédito Fiscal</th>
-                            <th>Crédito Fiscal</th>
-                            <th>Tipo Compra</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="7">No hay registros disponibles en Confirmación de Compras.</td>
-                        </tr>
+                        <?php if (!empty($mensuales)): ?>
+                            <?php foreach ($mensuales as $mensual): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($mensual['nit_proveedor']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['razon_social_proveedor']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['codigo_autorizacion']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['numero_factura']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['numero_dui_dim']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['fecha_factura']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['importe_total_compra']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['descuentos']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['importe_gift_card']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
+                                    <td>
+                                        <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
+                                        <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
+                                        <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="13">No hay registros disponibles.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
