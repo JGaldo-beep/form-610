@@ -17,14 +17,18 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Compras</title>
     <link rel="stylesheet" href="../css/style_rc.css">
-    <script>
-        function mostrarTab(tab) {
-            document.getElementById("compras-registradas").style.display = tab === 'compras' ? 'block' : 'none';
-            document.getElementById("confirmacion-compras").style.display = tab === 'confirmacion' ? 'block' : 'none';
-        }
-    </script>
 </head>
 <body>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Menú</h3>
+        <ul>
+            <li><a href="registro_compras.php">Registro de Compras</a></li>
+            <li><a href="registro_ventas.php">Registro de Ventas</a></li>
+        </ul>
+    </aside>
 
     <!-- Contenido principal -->
     <main class="content">
@@ -57,7 +61,7 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                 <label for="nitProveedor">Nit Proveedor:</label>
                 <input type="text" id="nitProveedor">
 
-                <label for="estadoConsolidacion">Estado Uso Consolidacion:</label>
+                <label for="estadoConsolidacion">Estado Uso Consolidación:</label>
                 <select id="estadoConsolidacion">
                     <option value="Pendiente">Pendiente</option>
                 </select>
@@ -69,63 +73,72 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-            <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
+                <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
                 <button onclick="mostrarTab('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
             </div>
-            
             <div id="compras-registradas">
-            <table >
-        <thead>
-            <tr>
-                <th>NIT Proveedor</th>
-                <th>Razón Social</th>
-                <th>Código de Autorización</th>
-                <th>Número Factura</th>
-                <th>Número DUI/DIM</th>
-                <th>Fecha Factura</th>
-                <th>Importe Total Compra</th>
-                <th>Descuentos</th>
-                <th>Importe Gift Card</th>
-                <th>Importe Base Crédito Fiscal</th>
-                <th>Crédito Fiscal</th>
-                <th>Tipo Compra</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php if (!empty($mensuales)): ?>
-                <?php foreach ($mensuales as $mensual): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($mensual['nit_proveedor']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['razon_social_proveedor']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['codigo_autorizacion']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['numero_factura']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['numero_dui_dim']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['fecha_factura']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['importe_total_compra']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['descuentos']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['importe_gift_card']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
-                        <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
-                        <td>
-                            <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
-                            <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
-                            <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td colspan="13">No hay registros disponibles.</td>
-                </tr>
-            <?php endif; ?>
-        </tbody>
-    </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NIT Proveedor</th>
+                            <th>Razón Social</th>
+                            <th>Código de Autorización</th>
+                            <th>Número Factura</th>
+                            <th>Número DUI/DIM</th>
+                            <th>Fecha Factura</th>
+                            <th>Importe Total Compra</th>
+                            <th>Descuentos</th>
+                            <th>Importe Gift Card</th>
+                            <th>Importe Base Crédito Fiscal</th>
+                            <th>Crédito Fiscal</th>
+                            <th>Tipo Compra</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (!empty($mensuales)): ?>
+                            <?php foreach ($mensuales as $mensual): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($mensual['nit_proveedor']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['razon_social_proveedor']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['codigo_autorizacion']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['numero_factura']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['numero_dui_dim']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['fecha_factura']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['importe_total_compra']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['descuentos']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['importe_gift_card']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
+                                    <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
+                                    <td>
+                                        <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
+                                        <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
+                                        <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="13">No hay registros disponibles.</td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
+</div>
+
+<script>
+    function mostrarTab(tab) {
+        document.getElementById("compras-registradas").style.display = tab === 'compras' ? 'block' : 'none';
+        document.getElementById("confirmacion-compras").style.display = tab === 'confirmacion' ? 'block' : 'none';
+    }
+</script>
 
 </body>
 </html>
+
+
 

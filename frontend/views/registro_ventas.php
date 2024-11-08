@@ -8,7 +8,18 @@
 </head>
 <body>
 
-<main class="content">
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h3>Menú</h3>
+        <ul>
+            <li><a href="registro_compras.php">Registro de Compras</a></li>
+            <li><a href="registro_ventas.php">Registro de Ventas</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="content">
         <header class="header">
             <h1>REGISTRO DE VENTAS</h1>
             <div class="user-info">
@@ -32,7 +43,7 @@
                 <label for="fecha-emision">Fecha Emision:</label>
                 <input type="date" id="fecha-emision">
 
-                <label for="codigo-autorizacion">Codigo de Autorizacion:</label>
+                <label for="codigo-autorizacion">Código de Autorización:</label>
                 <input type="text" id="codigo-autorizacion">
 
                 <label for="nro-factura">Nro. Factura:</label>
@@ -41,7 +52,7 @@
                 <label for="nro-cliente">Nro. Documento Cliente:</label>
                 <input type="text" id="nro-cliente">
 
-                <label for="estadoConsolidacion">Estado Uso Consolidacion:</label>
+                <label for="estadoConsolidacion">Estado Uso Consolidación:</label>
                 <select id="estadoConsolidacion">
                     <option value="Seleccionar">Seleccionar</option>
                 </select>
@@ -53,15 +64,10 @@
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-            <button onclick="mostrarTab('ventas')">ESTANDAR</button>
-            </div>
-            <div class="table-controls">
-                <button class="btn-new">Nuevo Registro</button>
-                <button class="btn-download">Descargar Consulta CSV</button>
-                <button class="btn-download">Descargar Consulta XLSX</button>
+                <button onclick="mostrarTab('ventas')">ESTÁNDAR</button>
             </div>
             
-            <div id="compras-registradas">
+            <div id="ventas-registradas">
                 <table>
                     <thead>
                         <tr>
@@ -84,39 +90,15 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    
+                    <tbody>
+                        <!-- Aquí irán los registros -->
+                    </tbody>
                 </table>
             </div>
-            
-            <div id="confirmacion-compras" style="display: none;">
-                <!-- Contenido de la pestaña de Confirmación de Compras -->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>N°</th>
-                            <th>Fecha de la Factura</th>
-                            <th>N° de la Factura</th>
-                            <th>Código de Autorización</th>
-                            <th>NIT / CI Cliente</th>
-                            <th>Complemento</th>
-                            <th>Nombre o Razón Social</th>
-                            <th>Importe Total de la Venta</th>
-                            <th>Descuentos, Bonificaciones y Rebajas Sujetas al IVA</th>
-                            <th>Importe Gift Card</th>
-                            <th>Importe Base Para Débito Fiscal</th>
-                            <th>Débito Fiscal</th>
-                            <th>Estado</th>
-                            <th>Código de Control</th>
-                            <th>Tipo de Venta</th>
-                            <th>Estado Consolidación</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-            </div>
-
-            
         </section>
     </main>
+</div>
 
 </body>
 </html>
+
