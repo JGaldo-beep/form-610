@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #002F6C;
+    color: #fff;
+    padding: 15px;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar ul .submenu li {
+    padding-left: 20px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #002F6C;
+}
+
+.search-section {
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    gap: 10px;
+}
+
+.search-section label {
+    font-size: 14px;
+}
+
+.search-section select,
+.search-section input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btn-search {
+    padding: 5px 15px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+
+.table-section {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-new {
+    background-color: #28a745;
+}
+
+.btn-download {
+    background-color: #007bff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #f0f8ff;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
