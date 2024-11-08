@@ -8,8 +8,13 @@ ini_set('display_errors', 1);
 
 // Instancia del modelo
 $mensualModel = new Mensual();
-$mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
+
+// Verificar si se ha enviado un tipo de compra desde el formulario
+$tipo_compra = isset($_POST['tipo_compra']) ? $_POST['tipo_compra'] : 'todos';
+$mensuales = $mensualModel->getAllMensualTipoCompra($tipo_compra); // Obtiene registros según el tipo de compra
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +33,6 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
             <li><a href="index.php">Inicio</a></li>
-
         </ul>
     </aside>
 
@@ -43,32 +47,21 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
 
         <section class="search-section">
             <h2>COMPRAS REGISTRADAS</h2>
-            <form>
+            <form method="POST" action="registro_compras.php">
                 <label for="gestion">Gestión:</label>
-                <select id="gestion">
+                <select id="gestion" name="gestion">
                     <option value="2024">2024</option>
                 </select>
 
-                <label for="codigo-autorizacion">Código de Autorización:</label>
-                <input type="text" id="codigo-autorizacion">
-
-                <label for="periodo">Periodo:</label>
-                <select id="periodo">
-                    <option value="OCTUBRE">OCTUBRE</option>
+                <label for="tipo_compra">Tipo de Compra:</label>
+                <select id="tipo_compra" name="tipo_compra">
+                    <option value="todos" <?php echo $tipo_compra == 'todos' ? 'selected' : ''; ?>>Todos</option>
+                    <option value="consumo" <?php echo $tipo_compra == 'consumo' ? 'selected' : ''; ?>>Consumo</option>
+                    <option value="alimento" <?php echo $tipo_compra == 'alimento' ? 'selected' : ''; ?>>Alimento</option>
+                    <option value="maquinaria" <?php echo $tipo_compra == 'maquinaria' ? 'selected' : ''; ?>>Maquinaria</option>
                 </select>
 
-                <label for="nro.factura">Nro. Factura:</label>
-                <input type="text" id="nro.factura">
-
-                <label for="nitProveedor">Nit Proveedor:</label>
-                <input type="text" id="nitProveedor">
-
-                <label for="estadoConsolidacion">Estado Uso Consolidación:</label>
-                <select id="estadoConsolidacion">
-                    <option value="Pendiente">Pendiente</option>
-                </select>
-
-                <button type="button">Buscar</button>
+                <button type="submit">Buscar</button>
             </form>
         </section>
 
@@ -113,7 +106,6 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                                     <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
                                     <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
                                     <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
-                                    
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -137,6 +129,3 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
 
 </body>
 </html>
-
-
-

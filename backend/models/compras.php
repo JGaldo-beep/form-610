@@ -14,6 +14,22 @@ class Mensual {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAllMensualTipoCompra($tipo_compra) {
+        if ($tipo_compra === 'todos') {
+            // Consulta sin filtro para obtener todos los registros
+            $stmt = $this->db->query("SELECT * FROM mensual ORDER BY id ASC");
+        } else {
+            // Consulta con filtro según el tipo de compra
+            $stmt = $this->db->prepare("SELECT * FROM mensual WHERE tipo_compra = ? ORDER BY id ASC");
+            $stmt->bind_param("s", $tipo_compra);
+            $stmt->execute();
+            $stmt = $stmt->get_result();
+        }
+        return $stmt->fetch_all(MYSQLI_ASSOC);
+    }
+    
+
+
     // Agregar categoría
     public function saveMensual($name) {
         $stmt = $this->db->prepare("INSERT INTO mensual (name) VALUES (?)");
