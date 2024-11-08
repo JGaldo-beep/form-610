@@ -1,15 +1,3 @@
-<?php
-// Incluir el archivo del modelo
-require_once __DIR__ . '/../../backend/models/compras.php';
-
-// Configuración para mostrar errores (útil para depuración)
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// Instancia del modelo
-$mensualModel = new Mensual();
-$mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +5,12 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Compras</title>
     <link rel="stylesheet" href="../css/style_rc.css">
+    <script>
+        function mostrarSeccion(seccion) {
+            document.getElementById("compras-registradas").style.display = seccion === 'compras' ? 'block' : 'none';
+            document.getElementById("confirmacion-compras").style.display = seccion === 'confirmacion' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
 
@@ -73,26 +67,31 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-                <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
-                <button onclick="mostrarTab('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
+                <button onclick="mostrarSeccion('compras')">COMPRAS REGISTRADAS</button>
+                <button onclick="mostrarSeccion('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
             </div>
-            
-            <div id="compras-registradas">
+
+            <!-- Tabla de Compras Registradas -->
+            <div id="compras-registradas" style="display: block;">
                 <table>
                     <thead>
                         <tr>
+                            <th>Nro</th>
+                            <th>Ver Factura Electronica</th>
                             <th>NIT Proveedor</th>
-                            <th>Razón Social</th>
+                            <th>Razón Social Proveedor</th>
                             <th>Código de Autorización</th>
                             <th>Número Factura</th>
                             <th>Número DUI/DIM</th>
-                            <th>Fecha Factura</th>
+                            <th>Fecha de Factura DUI/DIM</th>
                             <th>Importe Total Compra</th>
-                            <th>Descuentos</th>
+                            <th>Descuentos, Bonificaciones y Rebajas Sujetas a IVA</th>
                             <th>Importe Gift Card</th>
                             <th>Importe Base Crédito Fiscal</th>
                             <th>Crédito Fiscal</th>
                             <th>Tipo Compra</th>
+                            <th>Codigo de Control</th>
+                            <th>Estado Consolidacion</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -103,12 +102,42 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                     </tbody>
                 </table>
             </div>
+
+            <!-- Tabla de Confirmación de Compras -->
+            <div id="confirmacion-compras" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nro</th>
+                            <th>Ver Factura Electronica</th>
+                            <th>NIT Proveedor</th>
+                            <th>Razón Social Proveedor</th>
+                            <th>Código de Autorización</th>
+                            <th>Número Factura</th>
+                            <th>Número DUI/DIM</th>
+                            <th>Fecha de Factura DUI/DIM</th>
+                            <th>Importe Total Compra</th>
+                            <th>Descuentos, bonificaciones y Rebajas Sujetas a IVA</th>
+                            <th>Importe Gift Card</th>
+                            <th>Importe Base Crédito Fiscal</th>
+                            <th>Crédito Fiscal</th>
+                            <th>Tipo Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7">No hay registros disponibles en Confirmación de Compras.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </div>
 </div>
 
 </body>
 </html>
+
 
 
 
