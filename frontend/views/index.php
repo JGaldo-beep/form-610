@@ -43,7 +43,7 @@
         
         <!-- Botón para Formularios -->
         <div class="card-large">
-            <a href="declaracion_jurada.php">
+            <a href="recaudaciones.php">
                 <img src="../images/imageprocesos.png" alt="Formularios Icono">
             </a>
             <h3>FORMULARIOS</h3>

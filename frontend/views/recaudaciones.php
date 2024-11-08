@@ -99,6 +99,9 @@
                 button.classList.add('rectificar');
                 button.style.backgroundColor = 'orange';
                 button.style.color = 'white';
+
+                window.location.href = 'declaracion_jurada.php';
+
             }, 3000); // 3000 ms = 3 segundos
         }
     </script>
