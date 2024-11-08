@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo del modelo
-require_once __DIR__ . '/../../backend/models/mensual.php';
+require_once __DIR__ . '/../../backend/models/compras.php';
 
 // Configuración para mostrar errores (útil para depuración)
 error_reporting(E_ALL);
