@@ -31,6 +31,7 @@
     <section class="section-facturador">
         <h2>FACTURADOR</h2>
         <div class="card-large">
+            
             <img src="../images/imagefacturacion.png" alt="Facturación Icono">
             <h3>FACTURADOR</h3>
             <p>Emisión de Facturas y administrador de clientes</p>
@@ -39,25 +40,39 @@
 
     <!-- Sección de Consultor en Línea -->
     <section class="section-consultor">
-        <h2>CONSULTOR EN LÍNEA</h2>
-        <div class="cards-container">
-            <div class="card-small">
+    <h2>CONSULTOR EN LÍNEA</h2>
+    <div class="cards-container">
+        
+        <!-- Botón para Formularios -->
+        <div class="card-small">
+            <a href="recaudaciones.php">
                 <img src="../images/imageprocesos.png" alt="Formularios Icono">
-                <h3>FORMULARIOS</h3>
-                <p>realice la declaracion de sus compras con un solo click</p>
-            </div>
-            <div class="card-small">
-                <img src="../images/imagemultas.png" alt="Facturas Icono">
-                <h3>FACTURAS</h3>
-                <p>Registre sus facturas al Sistema Nacional de Impuestos</p>
-            </div>
-            <div class="card-small">
-                <img src="../images/buzon.png" alt="Buzón Icono">
-                <h3>BUZÓN</h3>
-                <p>Verifique sus mensajes informativos</p>
-            </div>
+            </a>
+            <h3>FORMULARIOS</h3>
+            <p>Realice la declaración de sus compras con un solo click</p>
         </div>
-    </section>
+        
+        <!-- Botón para Facturas -->
+        <div class="card-small">
+            <a href="registro_compras.php">
+                <img src="../images/imagemultas.png" alt="Facturas Icono">
+            </a>
+            <h3>FACTURAS</h3>
+            <p>Registre sus facturas al Sistema Nacional de Impuestos</p>
+        </div>
+        
+        <!-- Botón para Buzón -->
+        <div class="card-small">
+            <a href=".php">
+                <img src="../images/buzon.png" alt="Buzón Icono">
+            </a>
+            <h3>BUZÓN</h3>
+            <p>Verifique sus mensajes informativos</p>
+        </div>
+        
+    </div>
+</section>
+
 
 </body>
 </html>
