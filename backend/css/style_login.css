@@ -1,0 +1,135 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor Principal */
+.login-container {
+    display: flex;
+    height: 100vh;
+    background-color: #0B2550; /* Color de fondo para el lado izquierdo */
+}
+
+/* Panel Izquierdo */
+.login-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #0B2550;
+    background-image: url('../images/6927689.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    text-align: center;
+    padding: 20px;
+}
+
+.siat-logo {
+    width: 150px; /* Ajustar según el tamaño del logo */
+    margin-bottom: 20px;
+}
+
+.login-left p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.login-left h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Panel Derecho */
+.login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0B2550;
+}
+
+.login-box {
+    width: 90%;
+    max-width: 400px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.logo-impuestos {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.login-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0B2550;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #073A73;
+}
+
+.login-button.secondary {
+    background-color: #4A90E2;
+}
+
+.login-button.secondary:hover {
+    background-color: #357ABD;
+}
+
+.forgot-password, .auth-info {
+    display: block;
+    margin-top: 10px;
+    color: #0B2550;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password:hover, .auth-info:hover {
+    text-decoration: underline;
+}
