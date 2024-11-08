@@ -1,126 +1,159 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 /* Barra de Navegación */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px;
-    background-color: #f0f8ff;
+    padding: 10px 20px;
+    background-color: #f5f9fc;
     border-bottom: 1px solid #ddd;
 }
 
+/* Logo */
 .navbar-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 .navbar-logo img {
-    height: 40px;
+    height: 40px; /* Tamaño ajustado del logo */
 }
 
+
+/* Contenedor para el campo de búsqueda y el usuario */
 .navbar-menu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px; /* Espacio entre el campo de búsqueda y el usuario */
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-button {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
+/* Campo de Búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 1;
+    border: 1px solid #b0c4de;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 250px;
 }
 
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
 }
 
-.dropdown-content a:hover {
-    background-color: #f0f0f0;
+.search-bar button img {
+    height: 20x; /* Ajusta el tamaño de la imagen de la lupa */
+    width: 10px;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
+/* Usuario */
 .navbar-user {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    font-size: 14px;
+    color: #1a2e52;
+    font-weight: bold;
 }
 
 .navbar-user img {
-    height: 24px;
+    height: 20px;
 }
 
-/* Contenedor de Tarjetas */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 40px;
-    max-width: 900px; /* Ajusta este valor para limitar el ancho general del contenedor */
-    margin: auto;
+
+
+/* Contenedor de Secciones (para alinear a la izquierda) */
+.section-facturador, .section-consultor {
+    max-width: 900px;
+    margin: 30px 0; /* Elimina el margen automático para alinear a la izquierda */
+    padding-left: 20px; /* Añade espacio solo en la izquierda */
+    text-align: left;
 }
 
-/* Estilo de las Tarjetas */
-.card {
+/* Tarjeta (Facturador y Consultor en Línea) */
+.card-large, .card-small {
+    margin-left: 0; /* Elimina el margen automático para que esté a la izquierda */
+}
+
+
+.section-facturador h2, .section-consultor h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+}
+
+/* Tarjeta Grande (Facturador) */
+.card-large {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 30px 20px; /* Aumenta el padding vertical para hacer las tarjetas más altas */
+    padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
-    max-width: 300px; /* Limita el ancho máximo de cada tarjeta */
-    margin: auto; /* Centra las tarjetas dentro de cada columna */
+    width: 300px;
+    margin-left: 0px; /* Alineación a la izquierda */
 }
 
-.card img {
+
+.card-large img {
     height: 80px;
     margin-bottom: 10px;
 }
 
-.card h3 {
+.card-large h3 {
     font-size: 18px;
     margin-bottom: 10px;
     color: #333;
 }
 
-.card p {
+.card-large p {
     font-size: 14px;
     color: #666;
 }
 
-.card:hover {
+/* Tarjetas Pequeñas */
+.card-small {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 30px; /* Reduce el padding interno */
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    width: 250px; /* Reduce el ancho de la tarjeta para que entren tres en línea */
+}
+
+/* Contenedor de Tarjetas Pequeñas (Consultor en Línea) */
+.cards-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding-left: 20px; /* Alinea el contenedor a la izquierda */
+    flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
+}
+
+
+.card-small img {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.card-small h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+.card-small:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
+
