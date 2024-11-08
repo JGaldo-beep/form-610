@@ -10,9 +10,7 @@
 
     <!-- Barra de Navegación -->
     <header class="navbar">
-        <div class="navbar-logo">
-            <img src="../images/ciudadania.png" alt="Ciudadanía Digital Bolivia" width="190" height="150">
-        </div>
+    <img src="../images/image.png" alt="Ciudadanía Digital Bolivia" width="100" height="100">
         
         <div class="navbar-menu">
             <!-- Campo de Búsqueda -->
@@ -21,7 +19,7 @@
                 <button><img src="../images/search_icon.png" alt="Buscar"></button>
             </div>
             <div class="navbar-user">
-                <span>admin@gmail.com</span>
+                <span>alanbrito@gmail.com</span>
                 <img src="../images/userlogo.png" alt="User Icon">
             </div>
         </div>
@@ -45,7 +43,7 @@
         
         <!-- Botón para Formularios -->
         <div class="card-large">
-            <a href="recaudaciones.php">
+            <a href="declaracion_jurada.php">
                 <img src="../images/imageprocesos.png" alt="Formularios Icono">
             </a>
             <h3>FORMULARIOS</h3>
@@ -63,11 +61,12 @@
         
         <!-- Botón para Buzón -->
         <div class="card-large">
-            <a href=".php">
-                <img src="../images/buzon.png" alt="Buzón Icono">
+            <a href="documentos.php">
+                <img src="../images/imageperson.png" alt="Buzón Icono">
             </a>
-            <h3>BUZÓN</h3>
-            <p>Verifique sus mensajes informativos</p>
+            
+            <h3>DOCUMENTOS PERSONALES</h3>
+            <p>Verifique su carnet de identidad, licencia de conduccion y certificado de nacimiento</p>
         </div>
         
     </div>

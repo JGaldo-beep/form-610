@@ -37,7 +37,7 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <header class="header">
             <h1>REGISTRO DE COMPRAS</h1>
             <div class="user-info">
-                <span>fridel@gmail.com</span>
+                <span>alanbritol@gmail.com</span>
             </div>
         </header>
 

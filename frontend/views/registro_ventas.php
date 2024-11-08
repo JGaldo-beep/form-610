@@ -15,6 +15,7 @@
         <ul>
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
+            <li><a href="index.php">Inicio</a></li>
         </ul>
     </aside>
 
@@ -23,7 +24,7 @@
         <header class="header">
             <h1>REGISTRO DE VENTAS</h1>
             <div class="user-info">
-                <span>fridel@gmail.com</span>
+                <span>alanbrito@gmail.com</span>
             </div>
         </header>
 
