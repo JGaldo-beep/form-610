@@ -1,15 +1,3 @@
-<?php
-// Incluir el archivo del modelo
-require_once __DIR__ . '/../../backend/models/mensual.php';
-
-// Configuración para mostrar errores (útil para depuración)
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// Instancia del modelo
-$mensualModel = new Mensual();
-$mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,17 +9,17 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
 <body>
 
 <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <h3>Menú</h3>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <h3>Menú Principal</h3>
         <ul>
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
         </ul>
-    </aside>
+    </div>
 
     <!-- Contenido principal -->
-    <main class="content">
+    <div class="main-content">
         <header class="header">
             <h1>REGISTRO DE COMPRAS</h1>
             <div class="user-info">
@@ -61,7 +49,7 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                 <label for="nitProveedor">Nit Proveedor:</label>
                 <input type="text" id="nitProveedor">
 
-                <label for="estadoConsolidacion">Estado Uso Consolidación:</label>
+                <label for="estadoConsolidacion">Estado Uso Consolidacion:</label>
                 <select id="estadoConsolidacion">
                     <option value="Pendiente">Pendiente</option>
                 </select>
@@ -76,6 +64,7 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                 <button onclick="mostrarTab('compras')">COMPRAS REGISTRADAS</button>
                 <button onclick="mostrarTab('confirmacion')">CONFIRMACIÓN DE COMPRAS</button>
             </div>
+            
             <div id="compras-registradas">
                 <table>
                     <thead>
@@ -96,49 +85,20 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (!empty($mensuales)): ?>
-                            <?php foreach ($mensuales as $mensual): ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($mensual['nit_proveedor']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['razon_social_proveedor']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['codigo_autorizacion']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['numero_factura']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['numero_dui_dim']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['fecha_factura']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['importe_total_compra']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['descuentos']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['importe_gift_card']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
-                                    <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
-                                    <td>
-                                        <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
-                                        <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
-                                        <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <tr>
-                                <td colspan="13">No hay registros disponibles.</td>
-                            </tr>
-                        <?php endif; ?>
+                        <tr>
+                            <td colspan="13">No hay registros disponibles.</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </section>
-    </main>
+    </div>
 </div>
-
-<script>
-    function mostrarTab(tab) {
-        document.getElementById("compras-registradas").style.display = tab === 'compras' ? 'block' : 'none';
-        document.getElementById("confirmacion-compras").style.display = tab === 'confirmacion' ? 'block' : 'none';
-    }
-</script>
 
 </body>
 </html>
+
+
 
 
 
