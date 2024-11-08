@@ -53,12 +53,12 @@
         <section class="table-section">
             <h3>PERIODO SELECCIONADO 10 - 2024</h3>
             <div class="tabs">
-            <button onclick="mostrarTab('compras')">ESTANDAR</button>
+            <button onclick="mostrarTab('ventas')">ESTANDAR</button>
             </div>
             <div class="table-controls">
-                    <button class="btn btn-new">Nuevo Registro</button>
-                    <button class="btn btn-download">Descargar Consulta CSV</button>
-                    <button class="btn btn-download">Descargar Consulta XLSX</button>
+                <button class="btn-new">Nuevo Registro</button>
+                <button class="btn-download">Descargar Consulta CSV</button>
+                <button class="btn-download">Descargar Consulta XLSX</button>
             </div>
             
             <div id="compras-registradas">
