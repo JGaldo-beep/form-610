@@ -1,3 +1,15 @@
+<?php
+// Incluir el archivo del modelo
+require_once __DIR__ . '/../../backend/models/compras.php';
+
+// Configuración para mostrar errores (útil para depuración)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Instancia del modelo
+$mensualModel = new Mensual();
+$mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,18 +48,18 @@
 
         <section class="search-section">
             <h2>COMPRAS REGISTRADAS</h2>
-            <form>
+            <form method="POST" action="registro_compras.php">
                 <label for="gestion">Gestión:</label>
-                <select id="gestion">
+                <select id="gestion" name="gestion">
                     <option value="2024">2024</option>
                 </select>
 
-                <label for="codigo-autorizacion">Código de Autorización:</label>
-                <input type="text" id="codigo-autorizacion">
-
-                <label for="periodo">Periodo:</label>
-                <select id="periodo">
-                    <option value="OCTUBRE">OCTUBRE</option>
+                <label for="tipo_compra">Tipo de Compra:</label>
+                <select id="tipo_compra" name="tipo_compra">
+                    <option value="todos" <?php echo $tipo_compra == 'todos' ? 'selected' : ''; ?>>Todos</option>
+                    <option value="consumo" <?php echo $tipo_compra == 'consumo' ? 'selected' : ''; ?>>Consumo</option>
+                    <option value="alimento" <?php echo $tipo_compra == 'alimento' ? 'selected' : ''; ?>>Alimento</option>
+                    <option value="maquinaria" <?php echo $tipo_compra == 'maquinaria' ? 'selected' : ''; ?>>Maquinaria</option>
                 </select>
 
                 <label for="nro.factura">Nro. Factura:</label>
@@ -56,7 +68,7 @@
                 <label for="nitProveedor">Nit Proveedor:</label>
                 <input type="text" id="nitProveedor">
 
-                <label for="estadoConsolidacion">Estado Uso Consolidacion:</label>
+                <label for="estadoConsolidacion">Estado Uso Consolidación:</label>
                 <select id="estadoConsolidacion">
                     <option value="Pendiente">Pendiente</option>
                 </select>
@@ -112,11 +124,7 @@
                                     <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
                                     <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
                                     <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
-                                    <td>
-                                        <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
-                                        <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
-                                        <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
-                                    </td>
+                                    
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
@@ -162,10 +170,6 @@
 
 </body>
 </html>
-
-
-
-
 
 
 
