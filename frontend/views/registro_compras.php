@@ -22,7 +22,6 @@
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
             <li><a href="index.php">Inicio</a></li>
-
         </ul>
     </div>
 
@@ -122,9 +121,38 @@
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="13">No hay registros disponibles.</td>
+                                <td colspan="17">No hay registros disponibles en Compras Registradas.</td>
                             </tr>
                         <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabla de Confirmación de Compras -->
+            <div id="confirmacion-compras" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nro</th>
+                            <th>Ver Factura Electronica</th>
+                            <th>NIT Proveedor</th>
+                            <th>Razón Social Proveedor</th>
+                            <th>Código de Autorización</th>
+                            <th>Número Factura</th>
+                            <th>Numero DUI/DIM</th>
+                            <th>Fecha de Factura DUI/DIM</th>
+                            <th>Importe Total Compra</th>
+                            <th>Descuentos, Bonificaciones y Rebajas Sujetas a IVA</th>
+                            <th>Importe Gift Card</th>
+                            <th>Importe Base Credito Fiscal</th>
+                            <th>Credito Fiscal</th>
+                            <th>Tipo Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="8">No hay registros disponibles en Confirmación de Compras.</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -134,6 +162,7 @@
 
 </body>
 </html>
+
 
 
 
