@@ -27,6 +27,8 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
         <ul>
             <li><a href="registro_compras.php">Registro de Compras</a></li>
             <li><a href="registro_ventas.php">Registro de Ventas</a></li>
+            <li><a href="index.php">Inicio</a></li>
+
         </ul>
     </aside>
 
@@ -111,11 +113,7 @@ $mensuales = $mensualModel->getAllMensual(); // Obtiene todos los registros
                                     <td><?php echo htmlspecialchars($mensual['importe_base_credito_fiscal']); ?></td>
                                     <td><?php echo htmlspecialchars($mensual['credito_fiscal']); ?></td>
                                     <td><?php echo htmlspecialchars($mensual['tipo_compra']); ?></td>
-                                    <td>
-                                        <a href="ver_mensual.php?id=<?php echo $mensual['id']; ?>">Ver</a> |
-                                        <a href="editar_mensual.php?id=<?php echo $mensual['id']; ?>">Editar</a> |
-                                        <a href="eliminar_mensual.php?id=<?php echo $mensual['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro?');">Eliminar</a>
-                                    </td>
+                                    
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>

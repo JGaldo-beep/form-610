@@ -16,6 +16,9 @@
                 <span>fridel@gmail.com</span>
                 <img src="../images/userlogo.png" alt="Usuario">
             </div>
+            <li style="text-align: left; list-style: none;">
+            <a href="index.php" style="color: white; text-decoration: none; font-size: 30px;">Inicio</a>
+        </li>
         </div>
     </header>
 
