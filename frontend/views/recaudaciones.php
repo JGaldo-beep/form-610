@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="9" class="sub-header">VIGENTES A DECLARAR (2 items)</td>
+                        <td colspan="9" class="sub-header">VIGENTES A DECLARAR (3 items)</td>
                     </tr>
                     <tr>
                         <td>1</td>
@@ -48,9 +48,9 @@
                         <td>10/2024</td>
                         <td>14/11/2024</td>
                         <td class="status presented">DDJJ DEL PERIODO PRESENTADA</td>
-                        <td><button class="btn rectificar"><img src="path/to/icon-rectificar.png" alt="Icono Rectificar"> Rectificar</button></td>
-                        <td><button class="btn ver"><img src="path/to/icon-ver.png" alt="Icono Ver"> Ver</button></td>
-                        <td><button class="btn certificar"><img src="path/to/icon-certificar.png" alt="Icono Certificar"> Certificar</button></td>
+                        <td><button class="btn rectificar">Rectificar</button></td>
+                        <td><button class="btn ver">Ver</button></td>
+                        <td><button class="btn certificar">Certificar</button></td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -59,9 +59,19 @@
                         <td>10/2024</td>
                         <td>14/11/2024</td>
                         <td class="status paid">PAGADO TOTALMENTE</td>
-                        <td><button class="btn rectificar"><img src="path/to/icon-rectificar.png" alt="Icono Rectificar"> Rectificar</button></td>
-                        <td><button class="btn ver"><img src="path/to/icon-ver.png" alt="Icono Ver"> Ver</button></td>
-                        <td><button class="btn certificar"><img src="path/to/icon-certificar.png" alt="Icono Certificar"> Certificar</button></td>
+                        <td><button class="btn rectificar">Rectificar</button></td>
+                        <td><button class="btn ver">Ver</button></td>
+                        <td><button class="btn certificar">Certificar</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>IRC IVA</td>
+                        <td>600</td>
+                        <td>10/2024</td>
+                        <td>14/11/2024</td>
+                        <td class="status pending">PENDIENTE</td>
+                        <td><button class="btn declarar">Declarar</button></td>
+
                     </tr>
                 </tbody>
             </table>
@@ -70,3 +80,4 @@
 
 </body>
 </html>
+
