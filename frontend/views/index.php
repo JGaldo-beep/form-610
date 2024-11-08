@@ -11,8 +11,7 @@
     <!-- Barra de Navegación -->
     <header class="navbar">
         <div class="navbar-logo">
-            <img src="images/logo_ciudadania.png" alt="Ciudadanía Digital Bolivia">
-            <span>Ciudadanía Digital Bolivia</span>
+            <img src="../images/ciudadania.png" alt="Ciudadanía Digital Bolivia" width="190" height="150">
         </div>
         
         <div class="navbar-menu">
@@ -22,7 +21,7 @@
             </div>
             <div class="navbar-user">
                 <span>admin@gmail.com</span>
-                <img src="images/icon_user.png" alt="User Icon">
+                <img src="../images/userlogo.png" alt="User Icon">
             </div>
         </div>
     </header>
@@ -30,22 +29,22 @@
     <!-- Contenedor de las Tarjetas -->
     <main class="cards-container">
         <div class="card">
-            <img src="images/facturacion_icon.png" alt="Facturación Icono">
+            <img src="../images/imagefacturacion.png" alt="Facturación Icono">
             <h3>FACTURACIÓN</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
         <div class="card">
-            <img src="images/documentos_icon.png" alt="Documentos Icono">
+            <img src="../images/imageperson.png" alt="Documentos Icono">
             <h3>DOCUMENTOS</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
         <div class="card">
-            <img src="images/procesos_icon.png" alt="Procesos Icono">
+            <img src="../images/imageprocesos.png" alt="Procesos Icono">
             <h3>PROCESOS</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>
         <div class="card">
-            <img src="images/multas_icon.png" alt="Multas Icono">
+            <img src="../images/imagemultas.png" alt="Multas Icono">
             <h3>MULTAS</h3>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </div>

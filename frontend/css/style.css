@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 30px 20px;
     background-color: #f0f8ff;
     border-bottom: 1px solid #ddd;
 }
@@ -88,7 +88,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 40px;
-    max-width: 1200px;
+    max-width: 900px; /* Ajusta este valor para limitar el ancho general del contenedor */
     margin: auto;
 }
 
@@ -97,10 +97,12 @@
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
+    padding: 30px 20px; /* Aumenta el padding vertical para hacer las tarjetas más altas */
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    max-width: 300px; /* Limita el ancho máximo de cada tarjeta */
+    margin: auto; /* Centra las tarjetas dentro de cada columna */
 }
 
 .card img {

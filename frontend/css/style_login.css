@@ -110,12 +110,28 @@
     transition: background-color 0.3s;
 }
 
+.login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px; /* Añade un margen inferior al botón INGRESAR */
+}
+
+
+
+
 .login-button:hover {
     background-color: #073A73;
 }
 
 .login-button.secondary {
     background-color: #4A90E2;
+    
 }
 
 .login-button.secondary:hover {
