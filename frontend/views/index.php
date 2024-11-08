@@ -17,7 +17,8 @@
         <div class="navbar-menu">
             <!-- Campo de Búsqueda -->
             <div class="search-bar">
-                <input type="text" placeholder="Buscar formularios..." id="searchInput">
+                <input type="text" placeholder="Buscar formulario..." id="searchInput">
+                <button><img src="../images/search_icon.png" alt="Buscar"></button>
             </div>
             <div class="navbar-user">
                 <span>admin@gmail.com</span>
@@ -26,47 +27,38 @@
         </div>
     </header>
 
-    <!-- Contenedor de las Tarjetas -->
-    <main class="cards-container">
-        <div class="card">
+    <!-- Sección de Facturador -->
+    <section class="section-facturador">
+        <h2>FACTURADOR</h2>
+        <div class="card-large">
             <img src="../images/imagefacturacion.png" alt="Facturación Icono">
-            <h3>FACTURACIÓN</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <h3>FACTURADOR</h3>
+            <p>Emisión de Facturas y administrador de clientes</p>
         </div>
-        <div class="card">
-            <img src="../images/imageperson.png" alt="Documentos Icono">
-            <h3>DOCUMENTOS</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="card">
-            <img src="../images/imageprocesos.png" alt="Procesos Icono">
-            <h3>PROCESOS</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-        <div class="card">
-            <img src="../images/imagemultas.png" alt="Multas Icono">
-            <h3>MULTAS</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </div>
-    </main>
+    </section>
 
-    <script>
-        // Filtrar el contenido del menú desplegable según la búsqueda
-        function filterDropdown() {
-            const input = document.getElementById("searchInput");
-            const filter = input.value.toUpperCase();
-            const dropdown = document.querySelector(".dropdown-content");
-            const links = dropdown.getElementsByTagName("a");
+    <!-- Sección de Consultor en Línea -->
+    <section class="section-consultor">
+        <h2>CONSULTOR EN LÍNEA</h2>
+        <div class="cards-container">
+            <div class="card-small">
+                <img src="../images/imageprocesos.png" alt="Formularios Icono">
+                <h3>FORMULARIOS</h3>
+                <p>realice la declaracion de sus compras con un solo click</p>
+            </div>
+            <div class="card-small">
+                <img src="../images/imagemultas.png" alt="Facturas Icono">
+                <h3>FACTURAS</h3>
+                <p>Registre sus facturas al Sistema Nacional de Impuestos</p>
+            </div>
+            <div class="card-small">
+                <img src="../images/buzon.png" alt="Buzón Icono">
+                <h3>BUZÓN</h3>
+                <p>Verifique sus mensajes informativos</p>
+            </div>
+        </div>
+    </section>
 
-            for (let i = 0; i < links.length; i++) {
-                const txtValue = links[i].textContent || links[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    links[i].style.display = "";
-                } else {
-                    links[i].style.display = "none";
-                }
-            }
-        }
-    </script>
 </body>
 </html>
+
