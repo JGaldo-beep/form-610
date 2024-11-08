@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal no deseado */
+}
+
+.container {
+    width: 100vw; /* Asegura que ocupe todo el ancho de la ventana */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centra verticalmente con espacio superior e inferior */
+    overflow: auto; /* Permite el desplazamiento vertical si es necesario */
+}
+
+.form-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #555;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f0f8ff;
+    color: #333;
+    font-weight: bold;
+}
+
+.table td input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #555;
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px; /* Añadir algo de espacio alrededor de los botones */
+}
+
+.back-button, .declare-button {
+    padding: 10px 20px;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    width: 120px;
+}
+
+.back-button {
+    background-color: #6c757d;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.declare-button {
+    background-color: #007bff;
+}
+
+.declare-button:hover {
+    background-color: #0056b3;
+}
